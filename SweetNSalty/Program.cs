@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SweetSpicy
+namespace SweetNSalty
 {
     class Program
     {

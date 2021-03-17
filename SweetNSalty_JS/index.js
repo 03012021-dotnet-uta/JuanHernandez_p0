@@ -1,11 +1,13 @@
-var starCount = 1;
 var endCount = 1000;
 var sweetCount = 0;
 var saltyCount = 0;
 var sweetNSaltyCount = 0;
+var sweet = "Sweet";
+var salty = "Salty";
+var sweetNSalty = "Sweet'N'Salty";
 
 // For loop that counts to 1000
-for (; starCount <= endCount; starCount++) {
+for (var starCount = 1; starCount <= endCount; starCount++) {
     if (starCount % 3 == 0 && starCount % 5 == 0) // For numbers which are multiples of three and five, print “sweet’nSalty” to the console (instead of the number).  
     {
         if (starCount % 10 == 0) {
@@ -31,6 +33,6 @@ for (; starCount <= endCount; starCount++) {
 }
 
 //Shows the amount of times each word was counted
-console.log("\n\nSweet Count: " + sweetCount);
-console.log("Salty Count: " + saltyCount);
-console.log("Sweet'N'Salty Count: " + sweetNSaltyCount);
+console.log(`\n\n${sweet} Count: ` + sweetCount);
+console.log(`${salty} Count: ` + saltyCount);
+console.log(`${sweetNSalty} Count: ` + sweetNSaltyCount);

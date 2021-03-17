@@ -1,10 +1,7 @@
 namespace PizzaBox.Domain.Models
 {
-  /// <summary>
-  /// 
-  /// </summary>
-  public class Customer
-  {
-
-  }
+    public class Customer
+    {
+        public string CustomerName { get; set; }
+    }
 }

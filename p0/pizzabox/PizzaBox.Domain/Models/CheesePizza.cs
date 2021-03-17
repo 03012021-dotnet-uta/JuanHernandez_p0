@@ -3,15 +3,15 @@ using PizzaBox.Domain.Abstracts;
 
 namespace PizzaBox.Domain.Models
 {
-    public class MeatPizza : APizza
+    public class CheesePizza : APizza
     {
-        public MeatPizza()
+        public CheesePizza()
         {
-            Name = "Meat Pizza";
+            Name = "Cheese Pizza";
         }
-        public MeatPizza(Size size)
+        public CheesePizza(Size size)
         {
-            Name = "Meat Pizza";
+            Name = "Cheese Pizza";
             Size = size;
         }
         protected override void AddCrust()
@@ -31,11 +31,6 @@ namespace PizzaBox.Domain.Models
                 new Topping()
                 {
                     Name = "Marinara"
-                },
-
-                new Topping()
-                {
-                    Name = "Meat"
                 },
 
                 new Topping()

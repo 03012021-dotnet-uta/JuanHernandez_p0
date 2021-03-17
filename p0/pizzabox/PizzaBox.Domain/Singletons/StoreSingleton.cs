@@ -12,7 +12,10 @@ namespace PizzaBox.Domain.Singletons
     public class StoreSingleton
     {
         private static StoreSingleton _storeSingleton;
-        public List<AStore> Stores { get; set; } // print job
+        public List<AStore> Stores { get; set; }
+        public List<APizza> storePizza { get; set; }
+
+        public List<Order> storeOrder { get; set; }
 
         public static StoreSingleton Instance
         {
@@ -29,17 +32,42 @@ namespace PizzaBox.Domain.Singletons
 
         public void Seeding()
         {
-            var stores = new List<AStore>
+            var store = new List<AStore>
             {
               new ChicagoStore(),
               new NewYorkStore(),
               new TexasStore()
             };
+            FileStorage fs = new FileStorage();
 
-            var fs = new FileStorage();
-
-            fs.WriteToXml<AStore>(stores);
-            Stores = fs.ReadFromXml<AStore>().ToList();
+            fs.WriteToXml<AStore>(store, 1);
+            Stores = fs.ReadFromXml<AStore>(1).ToList();
         }
+
+        public void SeedingPizza()
+        {
+            var pizza = new List<APizza>
+            {
+                new MeatPizza(),
+                new PepPizza(),
+                new CheesePizza()
+            };
+
+            FileStorage fs = new FileStorage();
+            fs.WriteToXml<APizza>(pizza, 3);
+            storePizza = fs.ReadFromXml<APizza>(3).ToList();
+        }
+        public void saveOrder(List<Order> orders)
+        {
+            FileStorage fs = new FileStorage();
+            fs.WriteToXml<Order>(orders, 2);
+        }
+
+        public void readOrder(List<Order> orders)
+        {
+            FileStorage fs = new FileStorage();
+            storeOrder = fs.ReadFromXml<Order>(2).ToList();
+        }
+
     }
 }

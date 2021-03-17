@@ -6,11 +6,30 @@ namespace PizzaBox.Storing
 {
     public class FileStorage
     {
-        //for storing the stores
-        private readonly string _path = @"store.xml";
-
-        public void WriteToXml<T>(List<T> data) where T : class
+        private readonly string storePath = @"stores.xml";
+        private readonly string orderPath = @"orders.xml";
+        private readonly string pizzaPath = @"pizza.xml";
+        public string findPath(int s)
         {
+            switch (s)
+            {
+                case 1:
+                    return storePath;
+
+                case 2:
+                    return orderPath;
+
+                case 3:
+                    return pizzaPath;
+
+            }
+            return null;
+        }
+
+        //for storing the stores
+        public void WriteToXml<T>(List<T> data, int s) where T : class
+        {
+            string _path = findPath(s);
             using (var writer = new StreamWriter(_path))
             {
                 var serializer = new XmlSerializer(typeof(List<T>));
@@ -19,8 +38,9 @@ namespace PizzaBox.Storing
             }
         }
 
-        public IEnumerable<T> ReadFromXml<T>() where T : class
+        public IEnumerable<T> ReadFromXml<T>(int s) where T : class
         {
+            string _path = findPath(s);
             using (var reader = new StreamReader(_path))
             {
                 var serializer = new XmlSerializer(typeof(List<T>));

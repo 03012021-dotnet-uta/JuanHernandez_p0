@@ -8,6 +8,7 @@ namespace PizzaBox.Domain.Models
         public MeatPizza()
         {
             Name = "Meat Pizza";
+            Price = 10.99;
         }
         public MeatPizza(Size size)
         {

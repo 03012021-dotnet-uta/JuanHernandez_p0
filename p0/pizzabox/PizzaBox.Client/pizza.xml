@@ -24,7 +24,7 @@
         <Price>0</Price>
       </Topping>
     </Toppings>
-    <Price>0</Price>
+    <Price>10.99</Price>
   </APizza>
   <APizza xsi:type="PepPizza">
     <Name>Pepperoni Pizza</Name>

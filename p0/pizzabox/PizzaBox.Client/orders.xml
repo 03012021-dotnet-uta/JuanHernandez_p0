@@ -9,7 +9,7 @@
           <Price>0</Price>
         </Crust>
         <Size>
-          <Name>Large</Name>
+          <Name>Small</Name>
           <Price>0</Price>
         </Size>
         <Toppings>
@@ -33,7 +33,7 @@
       <storeName>Chicago Store</storeName>
     </orderStore>
     <orderCustomer>
-      <CustomerName>Jolly</CustomerName>
+      <CustomerName>Mark</CustomerName>
     </orderCustomer>
   </Order>
 </ArrayOfOrder>
